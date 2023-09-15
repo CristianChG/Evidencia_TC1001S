@@ -45,8 +45,8 @@ def floor(value):
     """Round value down to grid with square size 133."""
     return ((value + 200) // 133) * 133 - 200
 
-
-state = {'player': 0}
+# Definition of the game state with the empty board
+state = {'player': 0, 'board': [[None, None, None], [None, None, None], [None, None, None]]}
 players = [drawx, drawo]
 
 
@@ -55,10 +55,15 @@ def tap(x, y):
     x = floor(x)
     y = floor(y)
     player = state['player']
-    draw = players[player]
-    draw(x, y)
-    update()
-    state['player'] = not player
+    
+    # Check if the square on the board is empty
+    if state['board'][int((y + 200) // 133)][int((x + 200) // 133)] is None:
+        draw = players[player]
+        draw(x, y)
+        update()
+        # Update the board with the player's move
+        state['board'][int((y + 200) // 133)][int((x + 200) // 133)] = player
+        state['player'] = not player
 
 #Define the colors of the X and O
 x_color = "red"
