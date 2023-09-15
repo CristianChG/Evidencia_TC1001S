@@ -8,7 +8,19 @@ Exercises
 4. How could you create a computer player?
 """
 
-from turtle import *
+from turtle import (
+    color,
+    up,
+    goto,
+    down,
+    circle,
+    setup,
+    hideturtle,
+    tracer,
+    update,
+    onscreenclick,
+    done
+)
 
 from freegames import line
 
@@ -23,30 +35,33 @@ def grid():
 
 def drawx(x, y):
     """Draw X player."""
-    #Add color to X
+    """Add color to X"""
     color(x_color)
-    #Shrink and center the X
+    """Shrink and center the X"""
     line(x + 30, y + 30, x + 103, y + 103)
     line(x + 30, y + 103, x + 103, y + 30)
 
 
 def drawo(x, y):
     """Draw O player."""
-    #Add color to O
+    """Add color to O"""
     color(o_color)
     up()
     goto(x + 67, y + 12)
     down()
-    #Shrink the circle
+    """Shrink the circle"""
     circle(55)
 
 
 def floor(value):
-    """Round value down to grid with square size 133."""
+    """Round value down to grid with square size 133"""
     return ((value + 200) // 133) * 133 - 200
 
-# Definition of the game state with the empty board
-state = {'player': 0, 'board': [[None, None, None], [None, None, None], [None, None, None]]}
+
+"""Definition of the game state with the empty board"""
+state = {'player': 0, 'board': [[None, None, None],
+                                [None, None, None],
+                                [None, None, None]]}
 players = [drawx, drawo]
 
 
@@ -55,17 +70,17 @@ def tap(x, y):
     x = floor(x)
     y = floor(y)
     player = state['player']
-    
-    # Check if the square on the board is empty
+    """Check if the square on the board is empty"""
     if state['board'][int((y + 200) // 133)][int((x + 200) // 133)] is None:
         draw = players[player]
         draw(x, y)
         update()
-        # Update the board with the player's move
+        """Update the board with the player's move"""
         state['board'][int((y + 200) // 133)][int((x + 200) // 133)] = player
         state['player'] = not player
 
-#Define the colors of the X and O
+
+"""Define the colors of the X and O"""
 x_color = "red"
 o_color = "blue"
 
