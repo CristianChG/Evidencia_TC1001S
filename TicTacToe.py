@@ -23,16 +23,22 @@ def grid():
 
 def drawx(x, y):
     """Draw X player."""
-    line(x, y, x + 133, y + 133)
-    line(x, y + 133, x + 133, y)
+    #Add color to X
+    color(x_color)
+    #Shrink and center the X
+    line(x + 30, y + 30, x + 103, y + 103)
+    line(x + 30, y + 103, x + 103, y + 30)
 
 
 def drawo(x, y):
     """Draw O player."""
+    #Add color to O
+    color(o_color)
     up()
-    goto(x + 67, y + 5)
+    goto(x + 67, y + 12)
     down()
-    circle(62)
+    #Shrink the circle
+    circle(55)
 
 
 def floor(value):
@@ -54,6 +60,9 @@ def tap(x, y):
     update()
     state['player'] = not player
 
+#Define the colors of the X and O
+x_color = "red"
+o_color = "blue"
 
 setup(420, 420, 370, 0)
 hideturtle()
