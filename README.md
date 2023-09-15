@@ -1,16 +1,13 @@
 # Evidencia_TC1001S
 SING0401 Aplicación de estándares y normas
 
-Alumna: Alexa Jimena González Lucio 
-Rama : a01277701_Alexa
+Alexa Jimena González Lucio 
+Branch : a01277701_Alexa
 
-Este código implementa un juego de memoria de parejas de números utilizando la biblioteca Turtle en Python. El objetivo del juego es encontrar todas las parejas de números ocultos bajo las fichas blancas. El jugador hace clic en las fichas para revelar los números y, si encuentra un par coincidente, las fichas se mantienen visibles. El juego sigue hasta que todas las parejas se han encontrado y se muestra un mensaje de victoria.
+This code implements a memory game of number pairs using the Turtle library in Python. The objective of the game is to find all the pairs of numbers hidden under the white tiles. The player clicks on the tiles to reveal the numbers, and if they find a matching pair, the tiles remain visible. The game continues until all pairs have been found, and a victory message is displayed.
 
-El juego utiliza imágenes y gráficos simples para crear una interfaz visual atractiva. También realiza un seguimiento del número de intentos (taps) del jugador y muestra este recuento en la consola junto con un mensaje de victoria cuando se resuelve el rompecabezas.
+The game uses simple images and graphics to create an attractive visual interface. It also keeps track of the number of attempts (taps) made by the player and displays this count in the console along with a victory message when the puzzle is solved.
 
-Para jugar, el usuario simplemente hace clic en las fichas para revelar los números debajo y trata de recordar su ubicación para encontrar las parejas coincidentes. Es un juego divertido para ejercitar la memoria y la concentración.
+To play, the user simply clicks on the tiles to reveal the numbers underneath and tries to remember their locations to find matching pairs. It's a fun game to exercise memory and concentration.
 
-Para este reto se implementó una función que cuenta el total de taps que hace el usuario en una partida, empleando la función de onscreenclick().
-Posteriormente se implementó una función que detecta el momento en el que el usuario termina de resolver el juego.
-
-
+For this challenge, a function was implemented to count the total number of taps made by the user in a game, using the onscreenclick() function. Subsequently, a function was implemented to detect when the user has finished solving the game.
