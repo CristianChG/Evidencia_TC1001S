@@ -30,6 +30,7 @@ tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
 taps = 0  # This variable counts the number of taps
+matched = 0  # This variable counts the number of pairs matched
 
 
 def square(x, y):
@@ -58,7 +59,8 @@ def xy(count):
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
     global taps  # designate taps as a global variable in this function
-    taps += 1    # increase the value of taps when the program detects a click
+    global matched  # designate matched as a global variable in this function
+    taps += 1  # increase the value of taps when the program detects a click
     print(taps, "taps have occurred")  # print the number of current taps
     spot = index(x, y)
     mark = state['mark']
@@ -69,6 +71,14 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+        # increase the value of "matched" when the the user finds a pair
+        matched += 1
+
+    # Check if all pairs have been matched
+    if matched == 32:
+        print("You have solved this puzzle!")
+        # Print a final message at the end of the game
+        print(taps, "taps occurred")
 
 
 def draw():
