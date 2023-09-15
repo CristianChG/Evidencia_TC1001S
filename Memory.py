@@ -1,4 +1,5 @@
 """Memory, puzzle game of number pairs."""
+# import each function used from the turtle and random libraries
 
 from random import shuffle
 from turtle import up
@@ -57,8 +58,8 @@ def xy(count):
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
     global taps  # designate taps as a global variable in this function
-    taps += 1
-    print(taps, "taps have occurred")
+    taps += 1    # increase the value of taps when the program detects a click
+    print(taps, "taps have occurred")  # print the number of current taps
     spot = index(x, y)
     mark = state['mark']
 
